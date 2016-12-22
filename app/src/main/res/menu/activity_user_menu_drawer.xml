@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_camera"
+            android:title="Profil" />
+        <item
+            android:id="@+id/nav_gallery"
+            android:title="CVlerim" />
+        <item
+            android:id="@+id/nav_slideshow"
+            android:title="Başvurularım" />
+        <item
+            android:id="@+id/nav_manage"
+            android:title="Ilanlar" />
+    </group>
+
+    <item android:title="Mesajlar">
+        <menu>
+            <item
+                android:id="@+id/nav_share"
+                android:title="Gelen Mesajlar" />
+            <item
+                android:id="@+id/nav_send"
+                android:title="Gönderilen Mesajlar" />
+        </menu>
+    </item>
+    <item
+        android:id="@+id/cikis"
+        android:title="Çıkış Yap" />
+</menu>
