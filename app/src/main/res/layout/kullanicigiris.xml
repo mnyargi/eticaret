@@ -13,8 +13,8 @@
 
         <ImageView
             android:layout_width="match_parent"
-            android:background="@mipmap/ic_launcher"
             android:layout_height="220dp"
+            android:background="@drawable/kariyerbanner"
             android:id="@+id/imageView" />
 
         <EditText
@@ -22,8 +22,8 @@
             android:layout_height="wrap_content"
             android:inputType="textEmailAddress"
             android:ems="10"
-            android:hint="@string/Mail"
-            android:layout_marginTop="20dp"
+            android:hint="Kullanıcı Adı"
+            android:layout_marginTop="40dp"
             android:textColorHint="@color/colorOne"
             android:id="@+id/userMailTxt"
             android:layout_gravity="center_horizontal" />

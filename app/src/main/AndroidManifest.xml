@@ -54,9 +54,18 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".Ayarlar"
-            android:label="@string/title_activity_ayarlar"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:name=".ayarlar"
+            android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="view.holder.ISVERENPAGE" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".MenuActivity"
+            android:label="@string/title_activity_menu"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

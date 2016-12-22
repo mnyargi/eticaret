@@ -7,7 +7,7 @@ import android.view.View;
 import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
-    Button kullaniciGiris,kayitOlBtn;
+    Button kullaniciGiris,kayitOlBtn,iletisim;
     Button isverenGiris;
 
 
@@ -18,6 +18,7 @@ public class MainActivity extends AppCompatActivity {
         kullaniciGiris = (Button)findViewById(R.id.userBtn);
         isverenGiris = (Button)findViewById(R.id.isverenBtn);
         kayitOlBtn = (Button)findViewById(R.id.kayitOlBtn);
+        iletisim = (Button)findViewById(R.id.iletisim);
 
         kullaniciGiris.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v)
@@ -40,6 +41,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(kayitIntent);
             }
         });
+
 
     }
 

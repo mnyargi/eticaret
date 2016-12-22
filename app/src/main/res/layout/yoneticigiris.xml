@@ -9,7 +9,7 @@
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="220dp"
-        android:background="@mipmap/ic_launcher"
+        android:background="@drawable/kariyerbanner"
         android:id="@+id/imageView" />
 
     <EditText
@@ -17,9 +17,9 @@
         android:layout_height="wrap_content"
         android:inputType="textEmailAddress"
         android:ems="10"
-        android:hint="@string/Mail"
+        android:hint="Kullanıcı Adı"
         android:textColorHint="@color/colorOne"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="40dp"
         android:id="@+id/yonMailtxt"
         android:layout_gravity="center_horizontal" />
 
@@ -39,6 +39,7 @@
         android:layout_height="wrap_content"
         android:text="@string/giris"
         android:id="@+id/yonGiris"
+        android:onClick="myClickHandler"
         android:background="@color/colorPrimary"
         android:layout_marginTop="10dp"
         android:layout_marginRight="10dp"

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:background="@color/colorPrimaryDark"
+    android:layout_height="match_parent">
+
+    <Button
+        android:text="profil"
+        android:layout_width="match_parent"
+        android:layout_marginTop="30dp"
+        android:background="@color/colorPrimaryDark"
+        android:layout_marginRight="30dp"
+        android:layout_marginLeft="30dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/profilAyarlar" />
+
+    <Button
+        android:text="özgeçmiş"
+        android:layout_width="match_parent"
+        android:layout_marginTop="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginLeft="30dp"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimaryDark"
+        android:id="@+id/ozgecmisAyarlar" />
+
+    <Button
+        android:text="başvurularım"
+        android:layout_width="match_parent"
+        android:layout_marginTop="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginLeft="30dp"
+        android:background="@color/colorPrimaryDark"
+        android:layout_height="wrap_content"
+        android:id="@+id/basvuruAyarlar" />
+
+    <Button
+        android:text="hesap"
+        android:layout_width="match_parent"
+        android:layout_marginTop="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginLeft="30dp"
+        android:background="@color/colorPrimaryDark"
+        android:layout_height="wrap_content"
+        android:id="@+id/hesapAyarlari" />
+
+</LinearLayout>
