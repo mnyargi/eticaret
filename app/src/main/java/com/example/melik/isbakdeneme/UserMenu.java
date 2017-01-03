@@ -1,56 +1,130 @@
 package com.example.melik.isbakdeneme;
 
 import android.os.Bundle;
+import android.app.FragmentManager;
+import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
+import android.support.v4.app.FragmentActivity;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.support.v4.app.Fragment;
+import android.widget.Toast;
 
-public class UserMenu extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+
+public class UserMenu extends AppCompatActivity{
+
+    android.support.v4.app.FragmentManager fragmentManager;
+
+    public Toolbar toolbar;
+
+
+    private NavigationView navigationView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_menu);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+
+        final Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar.setTitle("Ilanlar");
         setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
+
+        android.support.v4.app.FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+        ProfileFragment proFragment = new ProfileFragment();
+        fragmentManager = getSupportFragmentManager();
+        fragmentManager.beginTransaction()
+                .replace(R.id.container, proFragment)
+                .commit();//fragment sonundaaaaa
+
+
+
+        final DrawerLayout drawerLayout = (DrawerLayout)findViewById(R.id.drawer);
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close){
+
             @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
+            public void onDrawerClosed(View drawerView) {
 
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
-                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
-        drawer.setDrawerListener(toggle);
+                super.onDrawerClosed(drawerView);
+            }
+
+            @Override
+            public void onDrawerOpened(View drawerView) {
+
+
+                super.onDrawerOpened(drawerView);
+            }
+        };
         toggle.syncState();
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
-        navigationView.setNavigationItemSelectedListener(this);
+        navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(MenuItem item) {
+                if(item.isChecked()) item.setChecked(false);
+                else item.setChecked(true);
+
+                drawerLayout.closeDrawers();
+
+                switch (item.getItemId()){
+
+                    case R.id.nav_camera:
+
+                        AdsFragment adsFragment = new AdsFragment();
+                        android.support.v4.app.FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+                        fragmentTransaction.replace(R.id.container,adsFragment);
+                        fragmentTransaction.commit();
+                        toolbar.setTitle("İlanlar");
+                        return true;
+
+                    case R.id.nav_gallery:
+
+                        CvFragment cvFragment = new CvFragment();
+                        android.support.v4.app.FragmentTransaction fragmentTransaction1 = getSupportFragmentManager().beginTransaction();
+                        fragmentTransaction1.replace(R.id.container,cvFragment);
+                        fragmentTransaction1.commit();
+                        toolbar.setTitle("cvler");
+                        return true;
+
+                    case R.id.nav_slideshow:
+
+                        ApplyFragment applyFragment = new ApplyFragment();
+                        android.support.v4.app.FragmentTransaction fragmentTransaction2 = getSupportFragmentManager().beginTransaction();
+                        fragmentTransaction2.replace(R.id.container,applyFragment);
+                        fragmentTransaction2.commit();
+                        toolbar.setTitle("başvurular");
+                        return true;
+
+                    case  R.id.nav_manage:
+
+
+                        ProfileFragment proFragment = new ProfileFragment();
+                        android.support.v4.app.FragmentTransaction fragmentTransaction3 = getSupportFragmentManager().beginTransaction();
+                        fragmentTransaction3.replace(R.id.container,proFragment);//container içinde açılacak olan fragment
+                        fragmentTransaction3.commit();
+                        toolbar.setTitle("profil");
+                        return  true;
+
+                    default:
+                        Toast.makeText(getApplicationContext(),"Yapım asamasında !!",Toast.LENGTH_SHORT).show();
+                        return true;
+
+                }
+
+            }
+        });
+
     }
 
-    @Override
-    public void onBackPressed() {
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        if (drawer.isDrawerOpen(GravityCompat.START)) {
-            drawer.closeDrawer(GravityCompat.START);
-        } else {
-            super.onBackPressed();
-        }
-    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -74,28 +148,7 @@ public class UserMenu extends AppCompatActivity
         return super.onOptionsItemSelected(item);
     }
 
-    @SuppressWarnings("StatementWithEmptyBody")
-    @Override
-    public boolean onNavigationItemSelected(MenuItem item) {
-        // Handle navigation view item clicks here.
-        int id = item.getItemId();
 
-        if (id == R.id.nav_camera) {
-            // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
 
-        } else if (id == R.id.nav_slideshow) {
 
-        } else if (id == R.id.nav_manage) {
-
-        } else if (id == R.id.nav_share) {
-
-        } else if (id == R.id.nav_send) {
-
-        }
-
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        drawer.closeDrawer(GravityCompat.START);
-        return true;
-    }
 }

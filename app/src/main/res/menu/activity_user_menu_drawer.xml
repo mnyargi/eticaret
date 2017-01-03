@@ -4,7 +4,7 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_camera"
-            android:title="Profil" />
+            android:title="İlanlar" />
         <item
             android:id="@+id/nav_gallery"
             android:title="CVlerim" />
@@ -13,7 +13,7 @@
             android:title="Başvurularım" />
         <item
             android:id="@+id/nav_manage"
-            android:title="Ilanlar" />
+            android:title="Profil" />
     </group>
 
     <item android:title="Mesajlar">

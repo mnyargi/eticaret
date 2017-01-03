@@ -13,4 +13,10 @@
     tools:context="com.example.melik.isbakdeneme.UserMenu"
     tools:showIn="@layout/app_bar_user_menu">
 
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:id="@+id/container"
+        android:layout_height="match_parent"></LinearLayout>
+
 </RelativeLayout>

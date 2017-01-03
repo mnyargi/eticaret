@@ -1,5 +1,6 @@
 package com.example.melik.isbakdeneme;
 
+import android.app.FragmentManager;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -9,14 +10,15 @@ import android.widget.Button;
 public class MainPage extends AppCompatActivity {
     Button mainUserSignInBtn, mainEmployeurSignInBtn, mainSignUpBtn;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_page);
 
-        mainUserSignInBtn = (Button)findViewById(R.id.mainUserSignIn);
-        mainEmployeurSignInBtn = (Button)findViewById(R.id.mainEmployeurSignIn);
-        mainSignUpBtn = (Button)findViewById(R.id.mainSignUp);
+        mainUserSignInBtn = (Button) findViewById(R.id.mainUserSignIn);
+        mainEmployeurSignInBtn = (Button) findViewById(R.id.mainEmployeurSignIn);
+        mainSignUpBtn = (Button) findViewById(R.id.mainSignUp);
 
         mainUserSignInBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -41,5 +43,6 @@ public class MainPage extends AppCompatActivity {
                 startActivity(signUpIntent);
             }
         });
+
     }
 }
