@@ -10,6 +10,6 @@ import android.os.Bundle;
 public class EmployeurSignIn extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.employeur_sign_in);
+        setContentView(R.layout.user_sign_in);
     }
 }
