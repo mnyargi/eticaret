@@ -42,8 +42,7 @@ public class UserSignIn extends Activity {
         userSignInPageBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent userMenuIntent = new Intent(UserSignIn.this, UserMenu.class);
-                startActivity(userMenuIntent);
+
 
                 RequestQueue queue = Volley.newRequestQueue(getApplicationContext());
                 StringRequest sr = new StringRequest(Request.Method.POST, "http://eticaret.merkezyazilim.com/service/giris", new Response.Listener<String>() {
